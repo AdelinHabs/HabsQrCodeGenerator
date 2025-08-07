@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Habs QR Code Generator</title>
+    <link rel="icon" href="./3d-qr-code-icon-png.webp" type="image/webp">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8eed1c1f47.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="master-container">
+        <div class="header">
+            <p class="left-header">Habs QR Code</p>
+            <p class="right-header">
+                <a href="mailto:adelinhaby@gmail.com">Contact Us&nbsp;</a>
+                </p>
+        </div>
+
+        <div class="middle-container">
+            <div class="title">
+                <h1>HABS QR CODE<br>GENERATOR</h1>
+            </div>
+            <div class="sub-title">
+                Transform any url, link, text or info into a scannable QR Code instantly.
+            </div>
+
+
+            <div class="info-wrapper">
+                <div class="container-1">
+                    <form action="/generate" method="POST">
+                        <input type="text" name="qrdata" placeholder="Input URL or text" required>
+                        <br>
+                        <button type="submit"><a href="./download.html" target="_blank"></a>Download QR Code</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Developed by <a href="https://github.com/AdelinHabs" target="_blank"> &nbsp;@AdelinHabs</a>
+        </div>
+    </div>
+</body>
+</html>

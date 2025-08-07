@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Habs QR Code Generator</title>
+    <link rel="icon" href="./3d-qr-code-icon-png.webp" type="image/webp">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8eed1c1f47.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="master-container">
+        <div class="header">
+            <p class="left-header">Habs QR Code</p>
+            <p class="right-header">
+                <a href="mailto:adelinhaby@gmail.com">Contact Us&nbsp;</a>
+                </p>
+        </div>
+
+        <div class="middle-container">
+            <div class="title">
+                <h1>HABS QR CODE<br>GENERATOR</h1>
+            </div>
+            <div class="sub-title">
+                Your QR Code has been generated and download has started.
+            </div>
+
+            <div class="preview">
+                <img src="{{ url_for('static', filename=qr_image) }}" alt="Generated QR Code" style="width: 200px; height: 200px;">
+            </div>
+
+            <div class="sub-title">
+                If your download has started automatically, click below to re-download it.
+            </div>
+            <a href="{{ url_for('static', filename=qr_image) }}" download="Habs_QR_Code.png">
+                <button style="
+                    width: 200px;
+                    height: 35px;
+                    margin: 10px;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #ffffff;
+                    background-color: #0A174E;
+                    cursor: pointer;
+                    border: 1.5px solid #0A174E;
+                    border-radius: 10px;">
+                    Download QR Code
+                </button>
+            </a>
+
+        </div>
+        <div class="footer">
+            Developed by <a href="https://github.com/AdelinHabs" target="_blank"> &nbsp;@AdelinHabs</a>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+        const link = document.createElement('a');
+        link.href = "{{ url_for('static', filename=qr_image) }}";
+        link.download = "QR_Code.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+    </script>
+</body>
+</html>
