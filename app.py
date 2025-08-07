@@ -45,5 +45,7 @@ def generate_qr():
         return render_template('download.html', error=error)
 
 if __name__ == '__main__':
+    import os
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
+
