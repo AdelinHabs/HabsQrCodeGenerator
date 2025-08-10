@@ -24,7 +24,7 @@
                 <h1>HABS QR CODE<br>GENERATOR</h1>
             </div>
             <div class="sub-title">
-                Your QR Code hasn't been generated and download has started.
+                Your QR Code has been generated and download has started.
             </div>
 
             <div class="preview">
@@ -32,7 +32,7 @@
             </div>
 
             <div class="sub-title">
-                If your download has started automatically, click below to re-download it.
+                If your download hasn't started automatically, click below to re-download it.
             </div>
             <a href="{{ url_for('static', filename=qr_image) }}" download="Habs_QR_Code.png">
                 <button style="
@@ -68,4 +68,5 @@
     };
     </script>
 </body>
+
 </html>
